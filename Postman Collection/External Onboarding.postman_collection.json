@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "915b1f04-a59d-448e-aecf-167f1c35871f",
+		"name": "External Onboarding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29498895"
+	},
+	"item": [
+		{
+			"name": "Borrower Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"email\": \"demo@example.com\",\n        \"password\": \"password\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/external_borrowers/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"external_borrowers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Borrower",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user\": {\n    \"email\": \"demo@example.com\",\n    \"password\": \"password\",\n    \"name\": \"Demo Borrower\"\n  },\n  \"company\": {\n    \"name\": \"Demo Borrower Company\"\n  },\n  \"address\": {\n    \"city\": \"Example City\",\n    \"country_code\": \"EX\",\n    \"line_1\": \"123 Example Street\",\n    \"postal_code\": \"12345\",\n    \"region\": \"Example Region\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/external_borrowers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"external_borrowers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url\n",
+			"value": "http://localhost:5000/v1",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000/v1"
+		}
+	]
+}
