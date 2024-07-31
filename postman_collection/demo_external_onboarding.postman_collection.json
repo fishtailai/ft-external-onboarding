@@ -9,11 +9,21 @@
 		{
 			"name": "Borrower Login",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{api_key}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\": {\n        \"email\": \"demo@example.com\",\n        \"password\": \"password\"\n    }\n}",
+					"raw": "{\n    \"user\": {\n        \"email\": \"demoemail@example.com\",\n        \"password\": \"password\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,16 +51,23 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "",
+							"value": "{{api_key}}",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"user\": {\n    \"email\": \"demo@example.com\",\n    \"password\": \"password\",\n    \"name\": \"Demo Borrower\"\n  },\n  \"company\": {\n    \"name\": \"Demo Borrower Company\"\n  },\n  \"address\": {\n    \"city\": \"Example City\",\n    \"country_code\": \"EX\",\n    \"line_1\": \"123 Example Street\",\n    \"postal_code\": \"12345\",\n    \"region\": \"Example Region\"\n  }\n}\n",
+					"raw": "{\n  \"user\": {\n    \"email\": \"demoemail@example.com\",\n    \"password\": \"password\",\n    \"name\": \"Demo Borrower\"\n  },\n  \"company\": {\n    \"name\": \"Demo Borrower Company\"\n  },\n  \"address\": {\n    \"city\": \"Example City\",\n    \"country_code\": \"EX\",\n    \"line_1\": \"123 Example Street\",\n    \"postal_code\": \"12345\",\n    \"region\": \"Example Region\"\n  }\n}\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,13 +111,12 @@
 	],
 	"variable": [
 		{
-			"key": "base_url\n",
-			"value": "http://localhost:5000/v1",
-			"type": "string"
+			"key": "api_key",
+			"value": "change-this"
 		},
 		{
 			"key": "base_url",
-			"value": "http://localhost:5000/v1"
+			"value": "https://api.fishtail.app/v1"
 		}
 	]
 }
