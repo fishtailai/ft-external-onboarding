@@ -7,4 +7,10 @@ Remember that using the provided endpoints requires an API key as Authorization 
 
 ## Walkthrough
 
-Loom video: https://www.loom.com/share/4f12f8548fdb463ca46dabbecc435fe7
+### Example Page
+
+https://www.loom.com/share/4f12f8548fdb463ca46dabbecc435fe7
+
+### Postman Collection
+
+https://www.loom.com/share/aed3339babb749059de8fd536e8d5f4a
