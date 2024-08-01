@@ -1,4 +1,7 @@
+// API key for authorization
 const API_KEY = 'change-this';
+
+// Base URLs for the backend and frontend
 const BACKEND_BASE_URL = 'https://api.fishtail.app';
 const FRONTEND_BASE_URL = 'https://fishtail.app';
 
@@ -81,6 +84,8 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   }
 });
 
+// Function to create borrower and manager, this kick-starts the onboarding process by setting up everything needed.
+// Keep in mind that the user entered here will be the manager of the borrower, and its credentials will be used to log in.
 async function createBorrowerAndManager(user, company, address) {
   const response = await fetch(`${BACKEND_BASE_URL}/v1/external_borrowers`, {
     method: 'POST',
@@ -94,6 +99,7 @@ async function createBorrowerAndManager(user, company, address) {
   return { data: await response.json(), status: response.status };
 }
 
+// Function to log in the borrower, this will return an access token that can be used to access the fishtail external onboarding page.
 async function loginBorrower(user) {
   const response = await fetch(`${BACKEND_BASE_URL}/v1/external_borrowers/login`, {
     method: 'POST',
