@@ -101,7 +101,7 @@ async function createBorrowerAndManager(user, company, address) {
 
 // Function to log in the borrower, this will return an access token that can be used to access the fishtail external onboarding page.
 async function loginBorrower(user) {
-  const response = await fetch(`${BACKEND_BASE_URL}/v1/external_borrowers/login`, {
+  const response = await fetch(`${BACKEND_BASE_URL}/v1/external_borrowers/sessions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
