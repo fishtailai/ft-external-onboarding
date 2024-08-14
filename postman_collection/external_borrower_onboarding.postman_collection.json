@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "915b1f04-a59d-448e-aecf-167f1c35871f",
+		"_postman_id": "2bb8b0d5-bae4-484b-acc3-2983a8559fce",
 		"name": "External Onboarding",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29498895"
@@ -31,13 +31,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/external_borrowers/login",
+					"raw": "{{base_url}}/external_borrowers/sessions",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"external_borrowers",
-						"login"
+						"sessions"
 					]
 				}
 			},
